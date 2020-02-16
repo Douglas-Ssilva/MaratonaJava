@@ -1,0 +1,68 @@
+- Sempre verificar no JavaDoc se a função que você quer fazer já não existe.
+- ArrayList: sempre respeita a ordem com a qual os elementos foram inseridos
+
+Collections.sort(list); - antes do java8. Faz-se necessário a implementação da Comparable em classes
+
+LinkedList possui mais performance em add e remove.
+ArrayList em get e set.
+
+Collections.reverse()- inverter a ordem de uma lista.
+Collections.shuffle()- embaralhar a ordem de uma lista
+Collections.singletonList()- nos devolve uma lista imutável que contêm um único elemento especificado
+Collections.nCopies()-  nos retorna uma lista imutável com a quantidade escolhida de um determinado elemento
+Collections.emptySet()- Por exemplo, imagina que você precisa representar um curso que foi cancelado pois não teve
+	matriculas. Nesse caso faria todo sentido devolver um Collections.emptySet(), nao deixa add
+
+Collection é a interface filha de Iterable que é mãe de todas
+
+
+List- garante a ordem de inserção. Permite duplicados.
+Set- não garante a ordem de inserção. Não permite elementos duplicados.
+LinkedHashSet- mantém a ordem de inserção, HashSet não
+
+Métodos como remove e contains em conjuntos Set são mais rápidos, pois eles usam o Hash(usa tabela de espalhamento)
+
+No caso do ArrayList, a inserção é bem rápida e a busca muito lenta!
+No caso do HashSet, a inserção ainda é rápida, embora um pouco mais lenta do que a das listas. Mas a busca é muito rápida!
+
+Bounds= limites
+
+Equals e hashcode
+== compara referência, assim por mais que tenha 2 objetos com attr iguais, mas se dei new na criação deles, serão 
+diferentes
+equals(na Object compara assim ==)- serve p falarmos quando 2 objetos serão iguais. Mas eles nunca serão o mesmo, 
+ou seja, apontando p mesma referência na memória
+
+Funcionamento da tabela de espalhamento: todos objetos que tem essa numero colocarei aqui. Assim ap receber um objeto
+ele só procura no 'GAVETA' onde fica aquele numero 
+HashCode é a garantia que nos dá de que um determinado objeto sempre ganhará o numero X
+Sempre que implementarmos o equals, temos que usar o HashCode.
+
+Na implementação do HashCode não é boa pratica separar os objetos por exemplo pela primeira letra do nome,
+visto que se tiver muitos nomes com aquela inicial nao ganharemos tanto em performance 
+
+Apesar de ser perigoso, se estamos verificando se um elemento pertence a uma implementação de List, só precisamos reescrever o 
+método equals(), já que o método .contains() de List só utiliza o equals para comparação.
+Quando estamos usando o método .contains() de List ele utiliza apenas o .equals() para comparar dois objetos, por isso a afirmativa é 
+verdadeira.
+
+Uma collection é uma coleção que trabalha com vários objetos
+É uma boa prática declarar Collection pois é a classe mais genérica, e quando não sei ainda se é melhor usar Set ou List 
+
+Set: uso quando não pode ter elementos repetidos e não me importa a ordem deles.
+List: não há problemas com elementos duplicados e quero ordem.
+
+Caso sinta necessidade de fazer uma requisição a um elemento específico através da sua posição, trocará de 
+Collection<E> para List<E>. Caso perceba que ordem não importa, porém é necessária uma busca bem rápida 
+(e sem repetições), um Set<E> é mais apropriado.
+
+* a coleção deve guardar os alunos ordenados pelo número de matrícula
+* a coleção não pode ter elementos repetidos
+A implementação TreeSet já ordena os seus elementos na hora da inserção. Qual é o critério da ordenação depende
+ e pode ser definido através de um Comparator.
+
+Usamos Map por exemplo quando queremos asssociar o numero de matricula ao aluno. 
+LinkedHaskMap- guarda a ordem em que foram dados os puts.
+
+
+
